@@ -7,6 +7,7 @@
   background: var(--background);
   z-index: 100;
   transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  font-family: 'Varela Round', sans-serif;
 }
 
 .navbar--scrolled {

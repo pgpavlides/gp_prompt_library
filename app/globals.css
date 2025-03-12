@@ -1,3 +1,6 @@
+/* Import Varela Round font */
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
 :root {
   --card-size: 180px;
   --card-spacing: 20px;
@@ -61,7 +64,7 @@ body {
   color: var(--foreground);
   line-height: 1.6;
   transition: background-color 0.3s ease, color 0.3s ease;
-  font-family: 'Valera Round', sans-serif;
+  font-family: 'Varela Round', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {

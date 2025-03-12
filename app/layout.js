@@ -1,12 +1,4 @@
-import { Varela } from "next/font/google";
 import "./globals.css";
-
-const varela = Varela({
-  variable: "--font-varela",
-  subsets: ["latin"],
-  display: "swap",
-  weight: "400", // Varela only comes in regular weight (400)
-});
 
 export const metadata = {
   title: "Prompt Library - Collection of Useful Prompts",
@@ -20,9 +12,7 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/logo/prompt-library.svg" />
         <meta name="theme-color" content="#000000" />
       </head>
-      <body
-        className={`${varela.variable} antialiased`}
-      >
+      <body className="antialiased">
         {children}
       </body>
     </html>

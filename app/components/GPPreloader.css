@@ -10,6 +10,7 @@
   align-items: center;
   background-color: #000000;
   transition: opacity 1.2s ease-in-out, visibility 0s linear 1.2s;
+  font-family: 'Varela Round', sans-serif;
 }
 
 .gp-preloader__container {
