@@ -10,20 +10,20 @@ const CategoryCard = ({ category, icon }) => {
   
   const handleClick = () => {
     setCurrentCategory(category);
-    router.push(`/category/${category.toLowerCase()}`);
+    router.push(`/category/${category.toLowerCase().replace(/\s+/g, '-')}`);
   };
   
   return (
-    <div className="card" tabIndex="0" onClick={handleClick}>
-      <div className="card-content">
-        <div>
-          <h3 className="card-title">{category}</h3>
+    <div className="category-button" tabIndex="0" onClick={handleClick}>
+      <div className="category-button-content">
+        <div className="category-button-text">
+          <h3 className="category-button-title">{category}</h3>
         </div>
-        <div className="card-icon">
+        <div className="category-button-icon">
           {icon}
         </div>
       </div>
-      <div className="card-accent"></div>
+      <div className="category-button-accent"></div>
     </div>
   );
 };

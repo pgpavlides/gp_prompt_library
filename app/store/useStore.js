@@ -75,8 +75,12 @@ const useStore = create((set, get) => ({
   // Functions
   findCategory: (slug) => {
     if (!slug) return null;
+    
+    // Convert hyphenated slug back to spaces for comparison
+    const normalizedSlug = slug.toLowerCase().replace(/-/g, ' ');
+    
     return promptData.find(cat => 
-      cat.category.toLowerCase() === slug.toLowerCase()
+      cat.category.toLowerCase() === normalizedSlug
     ) || null;
   },
   

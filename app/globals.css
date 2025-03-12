@@ -1,3 +1,40 @@
+/* Scrollbar Styling */
+body {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: var(--accent) transparent; /* Firefox */
+}
+
+/* WebKit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--accent);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--text-secondary);
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* Create a class for when scrolling is active */
+.is-scrolling ::-webkit-scrollbar-thumb {
+  opacity: 1;
+}
+
+/* Hide scrollbar thumb when not scrolling */
+::-webkit-scrollbar-thumb {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
 /* Import Varela Round font */
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
@@ -179,6 +216,95 @@ button {
   width: 100%;
 }
 
+/* Category Card Styles - Button-like for homepage */
+.category-button {
+  position: relative;
+  height: 60px;
+  background: var(--card-bg);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  box-shadow: 0 4px 8px var(--shadow-color);
+  cursor: pointer;
+  transition: transform var(--transition-duration) ease-out,
+              background-color var(--transition-duration) ease-out,
+              box-shadow var(--transition-duration) ease-out;
+}
+
+.category-button:hover {
+  background: var(--card-hover);
+  box-shadow: 0 8px 16px var(--shadow-color);
+  transform: translateY(-4px);
+}
+
+.category-button-content {
+  position: relative;
+  height: 100%;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.category-button-text {
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.category-button-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.category-button-icon {
+  background: var(--accent);
+  color: var(--background);
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.5rem;
+}
+
+.category-button-icon svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.category-button-accent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--accent);
+  transform-origin: bottom center;
+  transform: scaleX(0.3);
+  transition: transform var(--transition-duration) ease-out;
+}
+
+.category-button:hover .category-button-accent {
+  transform: scaleX(1);
+}
+
+/* Category Grid - 3x3 grid for homepage */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--card-spacing);
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 /* Accessibility */
 .card:focus {
   outline: 2px solid var(--accent);
@@ -204,6 +330,18 @@ button {
   .card-content {
     padding: 1rem;
   }
+  
+  .category-button-content {
+    padding: 0.6rem 1rem;
+  }
+  
+  .category-button-title {
+    font-size: 0.9rem;
+  }
+  
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 480px) {
@@ -224,6 +362,31 @@ button {
   .card-content {
     padding: 0.8rem;
   }
+  
+  .category-button-content {
+    padding: 0.5rem 0.8rem;
+  }
+  
+  .category-button-title {
+    font-size: 0.85rem;
+  }
+  
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Search card styles */
+.search-card {
+  height: 180px !important;
+}
+
+.search-card .card-content {
+  height: 100%;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* Copy Indicator */

@@ -136,8 +136,8 @@ const Navbar = () => {
               {useStore.getState().promptData.map((category, index) => (
                 <li key={index}>
                   <Link 
-                    href={`/category/${category.category.toLowerCase()}`} 
-                    className={`navbar__mobile-menu-link ${pathname === `/category/${category.category.toLowerCase()}` ? 'navbar__mobile-menu-link--active' : ''}`}
+                    href={`/category/${category.category.toLowerCase().replace(/\s+/g, '-')}`} 
+                    className={`navbar__mobile-menu-link ${pathname === `/category/${category.category.toLowerCase().replace(/\s+/g, '-')}` ? 'navbar__mobile-menu-link--active' : ''}`}
                     onClick={toggleMenu}
                   >
                     {category.category}

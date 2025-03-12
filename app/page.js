@@ -143,7 +143,7 @@ export default function Home() {
               
               {/* Categories Grid */}
               <div className="container">
-                <div className="card-grid">
+                <div className="category-grid">
                   {promptData && promptData.length > 0 && promptData.map((category, index) => (
                     <CategoryCard
                     key={index}

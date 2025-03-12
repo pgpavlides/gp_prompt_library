@@ -25,7 +25,7 @@ const SearchResults = () => {
       </h2>
       
       {results.length > 0 && (
-        <div className="card-grid">
+        <div className="card-grid" style={{ gridTemplateColumns: "1fr" }}>
           {results.map((prompt, index) => (
             <PromptCard
               key={index}
@@ -34,6 +34,7 @@ const SearchResults = () => {
                 ? prompt.content.substring(0, 80) + '...' 
                 : prompt.content}`}
               content={prompt.content}
+              isSearchResult={true}
             />
           ))}
         </div>

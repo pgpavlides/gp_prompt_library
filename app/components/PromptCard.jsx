@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 
-const PromptCard = ({ title, description, content }) => {
+const PromptCard = ({ title, description, content, isSearchResult }) => {
   const [copied, setCopied] = useState(false);
   
   const handleCopy = () => {
@@ -19,7 +19,7 @@ const PromptCard = ({ title, description, content }) => {
   };
   
   return (
-    <div className="card" tabIndex="0" onClick={handleCopy}>
+    <div className={`card ${isSearchResult ? 'search-card' : ''}`} tabIndex="0" onClick={handleCopy}>
       <div className="card-content">
         <div className="card-text-container">
           <h3 className="card-title">{title}</h3>
