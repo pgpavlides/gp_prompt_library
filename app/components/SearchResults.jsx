@@ -25,16 +25,14 @@ const SearchResults = () => {
       </h2>
       
       {results.length > 0 && (
-        <div className="card-grid" style={{ gridTemplateColumns: "1fr" }}>
+        <div className="prompts-list">
           {results.map((prompt, index) => (
             <PromptCard
               key={index}
-              title={prompt.title}
-              description={`${prompt.category} • ${prompt.content.length > 80 
-                ? prompt.content.substring(0, 80) + '...' 
-                : prompt.content}`}
+              title={`${prompt.category} • ${prompt.title}`}
+              description={prompt.content}
               content={prompt.content}
-              isSearchResult={true}
+              isSearchResult={false}
             />
           ))}
         </div>

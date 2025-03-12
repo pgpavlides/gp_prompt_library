@@ -19,11 +19,11 @@ const PromptCard = ({ title, description, content, isSearchResult }) => {
   };
   
   return (
-    <div className={`card ${isSearchResult ? 'search-card' : ''}`} tabIndex="0" onClick={handleCopy}>
+    <div className={`card full-width ${isSearchResult ? 'search-card' : ''}`} tabIndex="0" onClick={handleCopy}>
       <div className="card-content">
         <div className="card-text-container">
           <h3 className="card-title">{title}</h3>
-          <p className="card-description">{description}</p>
+          <p className="card-description">{content}</p>
         </div>
         <div className="card-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">

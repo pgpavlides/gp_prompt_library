@@ -301,7 +301,6 @@ button {
   grid-template-columns: repeat(3, 1fr);
   gap: var(--card-spacing);
   width: 100%;
-  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -387,6 +386,42 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+/* Prompts List */
+.prompts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.prompts-list .card {
+  height: auto;
+  min-height: 120px;
+}
+
+.prompts-list .card-content {
+  padding: 20px;
+}
+
+.prompts-list .card-text-container {
+  max-height: none;
+  overflow: visible;
+}
+
+.prompts-list .card-title {
+  white-space: normal;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+
+.prompts-list .card-description {
+  white-space: pre-wrap;
+  font-size: 0.9rem;
+  display: block;
+  -webkit-line-clamp: unset;
+  line-height: 1.5;
 }
 
 /* Copy Indicator */

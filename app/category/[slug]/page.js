@@ -59,16 +59,14 @@ export default function CategoryPage({ params }) {
               <p className="header__subtitle">Choose a prompt to copy to your clipboard</p>
             </header>
             
-            {/* Prompts Grid */}
+            {/* Prompts List */}
             <div className="container">
-              <div className="card-grid">
+              <div className="prompts-list">
                 {category.prompts.map((prompt, index) => (
                   <PromptCard
                     key={index}
                     title={prompt.title}
-                    description={prompt.content.length > 120 
-                      ? prompt.content.substring(0, 120) + '...' 
-                      : prompt.content}
+                    description={prompt.content}
                     content={prompt.content}
                   />
                 ))}
