@@ -1,0 +1,158 @@
+/* Content visibility classes */
+.content-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.content-visible {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Main layout */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: calc(100vh - 70px); /* Account for navbar */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  margin: 0 auto 3rem;
+}
+
+/* Header styles */
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header__title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem 0;
+  color: var(--text-primary);
+}
+
+.header__subtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.header__back-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0 auto 1.5rem;
+  padding: 0.5rem 1rem;
+  background: none;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.header__back-button:hover {
+  background-color: var(--hover-color);
+  border-color: var(--text-secondary);
+}
+
+.header__back-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Footer styles */
+.footer {
+  text-align: center;
+  padding-top: 2rem;
+  margin-top: auto;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+/* Search Results */
+.search-results {
+  width: 100%;
+}
+
+.search-results__title {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+}
+
+/* Copy Indicator */
+.copy-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--success-color);
+  color: white;
+  border-radius: var(--card-radius);
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  animation: fadeIn 0.3s ease-in-out;
+  z-index: 10;
+}
+
+.copy-indicator svg {
+  width: 18px;
+  height: 18px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  main {
+    padding: 1.5rem;
+  }
+  
+  .header__title {
+    font-size: 2rem;
+  }
+  
+  .header__subtitle {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  main {
+    padding: 1rem;
+  }
+  
+  .header__title {
+    font-size: 1.8rem;
+  }
+  
+  .search-results__title {
+    font-size: 1.25rem;
+  }
+}

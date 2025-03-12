@@ -1,0 +1,111 @@
+.gp-preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  transition: opacity 1.2s ease-in-out, visibility 0s linear 1.2s;
+}
+
+.gp-preloader__container {
+  width: 100%;
+  padding: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Initial logo styles */
+.gp-preloader__initial-logo {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 3rem;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+  animation: pulse 2s infinite ease-in-out;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+/* Progress bar styles */
+.gp-preloader__progress-container {
+  width: 200px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  margin-top: 30px;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+.gp-preloader__progress-bar {
+  width: 0;
+  height: 100%;
+  background-color: #ffffff;
+  transition: width 0.5s ease-in-out;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* App logo styles */
+.gp-preloader__app-logo {
+  width: 250px;
+  height: 250px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.7));
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+/* Stage-specific styles */
+.gp-preloader--fade-initial .gp-preloader__initial-logo,
+.gp-preloader--fade-initial .gp-preloader__progress-container {
+  opacity: 0;
+}
+
+.gp-preloader--show-app-logo .gp-preloader__app-logo {
+  opacity: 1;
+}
+
+.gp-preloader--fade-app-logo .gp-preloader__app-logo {
+  opacity: 0;
+}
+
+.gp-preloader--fade-background {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Logo animation */
+@keyframes pulse {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+  }
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .gp-preloader__progress-container {
+    width: 70%;
+  }
+  
+  .gp-preloader__initial-logo,
+  .gp-preloader__app-logo {
+    width: 100px;
+    height: 100px;
+  }
+}

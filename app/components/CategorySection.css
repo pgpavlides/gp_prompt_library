@@ -1,0 +1,19 @@
+.category-section {
+  margin-bottom: 3rem;
+}
+
+.category-section__title {
+  position: relative;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  color: #000000;
+  border-bottom: 2px solid #000000;
+}
+
+.category-section__prompts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}

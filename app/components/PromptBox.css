@@ -1,0 +1,52 @@
+.prompt-box {
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.prompt-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.prompt-box__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #000000;
+}
+
+.prompt-box__content {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #333333;
+  margin-bottom: 1.5rem;
+  white-space: pre-wrap;
+}
+
+.prompt-box__copy-btn {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.prompt-box__copy-btn:hover {
+  background-color: #333333;
+}
+
+.prompt-box__copy-btn--copied {
+  background-color: #4CAF50;
+}
+
+.prompt-box__copy-btn--copied:hover {
+  background-color: #43A047;
+}
